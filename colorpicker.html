@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initual-scale=1,maximum-scale=1,user-scalable=no">
+<title>forms
+</title>
+<style type="text/css">
+body{
+color:white;
+background-color:black;
+
+}
+div{
+display:inline-block;
+position:relative;
+width:32%;
+height:200px;
+border:1px groove white;
+border-radius:8px;
+box-shadow:0px 0px 10px silver;
+}
+#main{
+position:relative;
+width:100%;
+height:100px;
+margin:0px;
+padding:0;
+}
+table{width:100%;
+position:relative;
+overflow-x:scroll;
+padding:0px;
+margin:0px;}
+.container{
+width:100%;
+}
+</style>
+</head>
+<body>
+<!-- Color Picker designed By Chisom Maxwell (aka MaxTech)-->
+<center><p class="container"><div id="first"></div><div id="second"></div><div id="third"></div></p></center>
+<div id="main"></div>
+<center>
+<input type="range" id="range_one" min="0" max="255" value="0">
+<input type="range" id="range_two" min="0" max="255" value="0"><br><br>
+<input type="range" id="range_three" min="0" max="255" value="0">
+</center>
+<p>color code: rgb(<span id="span_one">0</span>,<span id="span_two">0</span>,<span id="span_three">0</span>)
+<script type="text/javascript">
+Span_one=document.getElementById("span_one");
+Span_two=document.getElementById("span_two");
+Span_three=document.getElementById("span_three");
+Range_one=document.getElementById("range_one");
+Range_two=document.getElementById("range_two");
+Range_three=document.getElementById("range_three");
+First=document.getElementById("first");
+Second=document.getElementById("second");
+Third=document.getElementById("third");
+Main=document.getElementById("main");
+
+Range_one.onchange=function(){
+Span_one.innerHTML=Range_one.value;
+First.style.backgroundColor="rgb("+this.value+",0,0)";
+Main.style.backgroundColor="rgb("+Range_one.value+","+Range_two.value+","+Range_three.value+")";
+}
+Range_two.onchange=function(){
+Span_two.innerHTML=Range_two.value;
+Second.style.backgroundColor="rgb(0,"+this.value+",0)";
+Main.style.backgroundColor="rgb("+Range_one.value+","+Range_two.value+","+Range_three.value+")";
+}
+Range_three.onchange=function(){
+Span_three.innerHTML=Range_three.value;
+Third.style.backgroundColor="rgb(0,0,"+this.value+")";
+Main.style.backgroundColor="rgb("+Range_one.value+","+Range_two.value+","+Range_three.value+")";
+}
+</script>
+<footer><center>
+<b>&copy;copyright 2018 Chisom Maxwell</b></center></footer>
+
+</body>
+</html>
